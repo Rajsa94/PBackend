@@ -12,7 +12,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     store: MongoDbStore.create({
-        mongoUrl: process.env.SECRET_KEY,
+        mongoUrl: "mongodb+srv://Rathore:Ra9680879504%23@cluster0.1dhc6u9.mongodb.net/Resume",
 
 
     }),
