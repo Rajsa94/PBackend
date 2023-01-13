@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express();
-const port = process.env.Port || 4000;
+const PORT = process.env.PORT || 3300
 require('dotenv').config()
 const passport = require('passport')
 var session = require('express-session')
@@ -45,7 +45,7 @@ app.use(route)
 
 
 
-app.listen(port, () => {
-    console.log(`rajsa is connected to backend ${port}`)
+app.listen(PORT, () => {
+    console.log(`rajsa is connected to backend ${PORT}`)
 })
 
