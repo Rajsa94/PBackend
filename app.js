@@ -7,14 +7,13 @@ var session = require('express-session')
 const MongoDbStore = require('connect-mongo')
 const cors = require("cors")
 
-const corsOpts = {
-    origin: 'rsrathore.netlify.app',
-    credentials: true,
-    methods: ['GET','POST','HEAD','PUT','PATCH','DELETE'],
-    allowedHeaders: ['Content-Type'],
-    exposedHeaders: ['Content-Type']
-};
-app.use(cors(corsOpts));
+
+app.use(cors());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // userlogin funsnality define
 app.use(session({
